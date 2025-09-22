@@ -7,15 +7,21 @@
 
 @theme {
   --color-main-bg: #000000;
+  --color-main-bg-block: #0f0f0f;
   --color-main-text: #ffffff;
+  --color-medium-green: #00c19a;
   --color-brand-blue: #10eded;
+  --color-main-stroke: #2b2a2a;
+  --color-main-fields: #222222;
+
+  --color-main-button-text: #000000;
+  --color-main-additional-text: #9f9f9f;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-mont: var(--font-mont);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,13 +32,150 @@
 }
 
 @layer components {
+  .text-xl {
+    @apply font-mont text-[20px] leading-[100%] align-middle;
+  }
   .text-l-regular {
-    @apply font-normal text-[18px] leading-[27px] text-center align-middle;
+    @apply font-mont text-[18px] leading-[27px] align-middle;
+  }
+  .text-m {
+    @apply font-mont text-[16px] leading-[100%] align-middle;
+  }
+  .text-xs {
+    @apply font-mont text-[12px] leading-[100%] align-middle;
+  }
+  .text-s {
+    @apply font-mont text-[14px] leading-[100%] align-middle;
+  }
+  .title-h2 {
+    @apply font-mont text-[48px] font-bold leading-[100%] align-middle;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply font-mont;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+p {
+  @apply font-mont;
+}
+
+.stroke-gradient {
+  -webkit-text-stroke: 2px transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(
+    180deg,
+    #727070 0%,
+    rgba(255, 255, 255, 0) 75.44%
+  );
+  color: black;
+  border: 2px solid;
+}
+
+.stroke-gradient-1 {
+  -webkit-text-stroke: 2px transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(
+    180deg,
+    #727070 0%,
+    rgba(255, 255, 255, 0) 85.44%
+  );
+  color: black;
+  border: 2px solid;
+}
+
+.AccordionRoot {
+  width: 100%;
+  background: var(--color-main-fields);
+  border-radius: 8px;
+}
+
+.AccordionItem {
+  overflow: hidden;
+  margin-top: 1px;
+  background: var(--color-main-bg-block);
+}
+
+.AccordionItem:first-child {
+  margin-top: 0;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.AccordionItem:last-child {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.AccordionHeader {
+  display: flex;
+}
+
+.AccordionTrigger {
+  padding: 0 16px;
+  height: 75px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.AccordionTrigger[aria-expanded="true"] {
+  background-color: var(--color-main-fields);
+}
+
+.AccordionTrigger:hover {
+  background-color: var(--color-main-fields);
+  cursor: pointer;
+}
+
+.AccordionContent {
+  background-color: var(--color-main-fields);
+}
+.AccordionContent[data-state="open"] {
+  background-color: var(--color-main-fields);
+  animation: slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1);
+}
+.AccordionContent[data-state="closed"] {
+  animation: slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.AccordionContentText {
+  padding: 0px 16px 24px;
+}
+
+.AccordionChevron {
+  color: var(--violet-10);
+  transition: transform 300ms cubic-bezier(0.87, 0, 0.13, 1);
+}
+.AccordionTrigger[data-state="open"] > .AccordionChevron {
+  transform: rotate(180deg);
+}
+
+@keyframes slideDown {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
 }

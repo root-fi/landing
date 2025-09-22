@@ -10,9 +10,11 @@
     "svgr": "svgr ./shared/icons --out-dir ./shared/icons/icons --typescript"
   },
   "dependencies": {
+    "@radix-ui/react-icons": "^1.3.2",
     "@svgr/webpack": "^8.1.0",
     "classnames": "^2.5.1",
     "next": "15.5.3",
+    "radix-ui": "^1.4.3",
     "react": "19.1.0",
     "react-dom": "19.1.0"
   },
