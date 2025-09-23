@@ -28,7 +28,7 @@ export const Button: React.FC<ButtonProps> = ({
   const variantStyles = {
     main: "text-main-button-text bg-[linear-gradient(270deg,_#10EDED_-0.53%,_#10EDC1_99.47%)] hover:bg-[linear-gradient(270deg,_#00C19A_-0.53%,_#10EDED_99.47%)]",
     additional:
-      "bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700",
+      "bg-main-brand-green text-brand-blue hover:bg-additional-dark-green",
     default: "bg-main-button-text hover:opacity-[0.9]",
   };
 

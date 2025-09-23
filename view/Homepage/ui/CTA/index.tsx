@@ -3,7 +3,7 @@ import React from "react";
 
 export const CTA = () => {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center mt-[-100px]">
       <h1 className="font-mont text-[300px] font-bold text-transparent bg-clip-text stroke-gradient-1">
         ROOT.FI
       </h1>

@@ -13,9 +13,11 @@
   --color-brand-blue: #10eded;
   --color-main-stroke: #2b2a2a;
   --color-main-fields: #222222;
+  --color-main-brand-green: #084d4c;
 
   --color-main-button-text: #000000;
   --color-main-additional-text: #9f9f9f;
+  --color-additional-dark-green: #0b6d6c;
 }
 
 @theme inline {
@@ -79,7 +81,6 @@ p {
     rgba(255, 255, 255, 0) 75.44%
   );
   color: black;
-  border: 2px solid;
 }
 
 .stroke-gradient-1 {
@@ -92,7 +93,6 @@ p {
     rgba(255, 255, 255, 0) 85.44%
   );
   color: black;
-  border: 2px solid;
 }
 
 .AccordionRoot {
@@ -129,6 +129,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: all 0.3s ease;
 }
 .AccordionTrigger[aria-expanded="true"] {
   background-color: var(--color-main-fields);
