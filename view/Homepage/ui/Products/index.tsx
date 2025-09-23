@@ -9,11 +9,11 @@ export const Products = () => {
   const [value, setValue] = useState<string | undefined>("earn");
   return (
     <div className="mt-[140px] flex flex-col gap-3 items-center">
-      <h1 className="font-mont text-[140px] font-bold text-transparent bg-clip-text stroke-gradient">
+      <h1 className="font-mont text-[60px] font-bold text-transparent bg-clip-text stroke-gradient xl:text-[140px] md:text-[90px] lg:text-[120px]">
         OUR PRODUCTS
       </h1>
       <div className="flex flex-col gap-20">
-        <div className="bg-main-bg-block shadow-[0_0_32px_0_#00000080] w-full h-[460px] rounded-4xl flex">
+        <div className="bg-main-bg-block shadow-[0_0_32px_0_#00000080] w-full h-[460px] rounded-4xl flex overflow-hidden">
           <div className="w-[50%] h-full p-[24px_40px] flex flex-col gap-4">
             <div className="flex justify-between gap-4">
               <div className="flex flex-col gap-2 items-baseline">
@@ -55,8 +55,8 @@ export const Products = () => {
               </Accordion.Item>
             </Accordion.Root>
           </div>
-          <div className="w-[50%] h-full">
-            <img src={`/images/${value}.png`} />
+          <div className="w-[50%] h-full md:min-w-[500px]">
+            <img src={`/images/${value}.png`} className="h-full object-cover" />
           </div>
         </div>
         <div className="grid grid-cols-2 gap-10">

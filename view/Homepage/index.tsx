@@ -12,14 +12,13 @@ export const Homepage = () => {
     <div className="relative flex justify-center flex-col items-center">
       <div className="relative w-full h-[600px] overflow-hidden flex justify-center">
         <video
-          className="absolute top-0 w-full max-w-[1920px] h-[600px] left-0 object-cover -z-10"
+          className="absolute top-0 w-full max-w-[1920px] h-[600px] left-auto object-cover -z-10"
           autoPlay
           muted
           loop
           playsInline
         >
           <source src="/video/60.mp4" type="video/mp4" />
-          Ваш браузер не поддерживает видео.
         </video>
       </div>
       <div className="absolute p-[140px_0] top-0 w-full max-w-[1300px] px-[10px] h-full left-[auto] object-cover -z-10 flex flex-col gap-10">
