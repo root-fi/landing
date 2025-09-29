@@ -35,7 +35,7 @@ export const AccordionContent = React.forwardRef<
     {...props}
     ref={forwardedRef}
   >
-    <div className="AccordionContentText text-s text-main-additional-text">
+    <div className="AccordionContentText text-s leading-[18px] text-main-additional-text">
       {children}
     </div>
   </Accordion.Content>

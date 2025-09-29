@@ -2,6 +2,7 @@
 
 import { Button } from "@/shared/ui/Button";
 import classNames from "classnames";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
@@ -37,7 +38,9 @@ export const Header = () => {
       )}
     >
       <div className="m-[0_auto] flex items-center justify-between max-w-[1300px] px-[10px] w-full h-[65px]">
-        <img src="/images/logo.png" alt="logo" width="138px" />
+        <Link href="/">
+          <Image src="/images/logo.png" alt="logo" width={138} height={34} />
+        </Link>
         <ul className="flex gap-20">
           <li>
             <Link
@@ -49,7 +52,7 @@ export const Header = () => {
           </li>
           <li>
             <Link
-              href="/"
+              href="/blog"
               className="text-main-additional-text text-m font-semibold hover:text-main-text transition-colors duration-200 ease-in-out"
             >
               Blog

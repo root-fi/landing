@@ -60,9 +60,6 @@ export const BaseIcon: FC<IconProps> = ({
   const w = width || size;
   const h = height || size;
 
-  const containerW = containerWidth || containerSize || w;
-  const containerH = containerHeight || containerSize || h;
-
   const baseStyles = classNames(
     "flex items-center justify-center box-border relative transition-all duration-300",
     {
@@ -83,8 +80,6 @@ export const BaseIcon: FC<IconProps> = ({
   });
 
   const style: CSSProperties = {
-    width: containerW,
-    height: containerH,
     borderRadius,
     transform: rotate ? `rotate(${rotate}deg)` : undefined,
   };
