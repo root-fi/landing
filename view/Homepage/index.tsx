@@ -55,7 +55,7 @@ export const Homepage = () => {
               className="w-[20px] md:-[27px]"
             />
             <span className="text-s md:text-l-regular md:font-normal font-medium">
-              Compete
+              Analyze
             </span>
           </div>
         </div>

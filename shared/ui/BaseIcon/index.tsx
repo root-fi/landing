@@ -48,7 +48,6 @@ export const BaseIcon: FC<IconProps> = ({
   opacity,
   rotate,
   hoverBgColor,
-  borderRadius = "0.25rem",
   bgColor,
   borderColor,
   className,
@@ -80,7 +79,6 @@ export const BaseIcon: FC<IconProps> = ({
   });
 
   const style: CSSProperties = {
-    borderRadius,
     transform: rotate ? `rotate(${rotate}deg)` : undefined,
   };
 

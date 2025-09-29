@@ -8,7 +8,10 @@ import React, { useState } from "react";
 export const Products = () => {
   const [value, setValue] = useState<string | undefined>("earn");
   return (
-    <div className="xl:mt-[140px] flex flex-col gap-3 items-center">
+    <div
+      id={"products"}
+      className="xl:mt-[140px] flex flex-col gap-3 items-center"
+    >
       <h1 className="font-mont text-[40px] font-bold text-transparent bg-clip-text stroke-gradient xl:text-[140px] md:text-[90px] lg:text-[114px]">
         OUR PRODUCTS
       </h1>
