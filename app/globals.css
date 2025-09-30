@@ -52,6 +52,9 @@
   .title-h1 {
     @apply font-mont text-[64px] font-bold leading-[100%] align-middle;
   }
+  .title-h5 {
+    @apply font-mont text-[28px] font-bold leading-[100%] align-middle;
+  }
 }
 
 html {
@@ -293,4 +296,75 @@ p {
 }
 .slick-arrow.slick-hidden {
   display: none;
+}
+
+.privacy-content {
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.privacy-content h1 {
+  text-align: center;
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-size: 64px;
+}
+
+.privacy-content h2 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin: 2.5rem 0 1.5rem;
+  font-weight: 600;
+}
+
+.privacy-content h2:first-child {
+  margin-top: 0;
+}
+
+.privacy-content h3 {
+  color: #ffffff;
+  font-size: 1.25rem;
+  margin: 2rem 0 1rem;
+  font-weight: 500;
+}
+
+.privacy-content p {
+  color: var(--color-main-additional-text);
+  margin: 1rem 0;
+}
+
+.privacy-content ul {
+  list-style-type: none;
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.privacy-content ul li {
+  margin-bottom: 0.75rem;
+  position: relative;
+  color: var(--color-main-additional-text);
+  line-height: 1.6;
+}
+
+.privacy-content ul li:before {
+  content: "•";
+  color: #808080;
+  position: absolute;
+  left: -1.5rem;
+}
+
+.privacy-content strong {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.privacy-content em {
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .privacy-content h1 {
+    font-size: 28px;
+  }
 }

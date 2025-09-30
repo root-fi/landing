@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
 import { NotionAPI } from "notion-client";
 
-import { getPost } from "@/entities/post/api";
-import { Post } from "@/view/Post";
+import { getPost, getRelativePosts } from "@/entities/post/api";
+import { PostPage } from "@/view/Post";
 
 function extractPageId(url: string): string | null {
   const match = url.match(/([a-f0-9]{32})/);
@@ -24,16 +24,21 @@ export default async function BlogPosts({
 }) {
   const { slug } = await params;
   const post = await getPost(slug);
-  if (!post) return notFound();
+  if (!post || !post.contentPage) return notFound();
 
   const notion = new NotionAPI();
 
   const pageId = extractPageId(post.contentPage);
   const recordMap = await notion.getPage(pageId!);
+  const relativePosts = await getRelativePosts(post.category);
 
   return (
-    <article className="mx-auto max-w-[1200px] px-[40px]">
-      <Post recordMap={recordMap} />
+    <article className="mx-auto px-[10px] md:py-8 py-4">
+      <PostPage
+        recordMap={recordMap}
+        post={post}
+        relativePosts={relativePosts}
+      />
     </article>
   );
 }

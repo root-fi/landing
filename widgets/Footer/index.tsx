@@ -61,13 +61,13 @@ export const Footer = () => {
             <h5 className="text-m font-semibold">Company</h5>
             <ul className="flex flex-col gap-4">
               <li className="text-main-additional-text text-s font-medium hover:text-main-text transition-colors duration-200 ease-in-out">
-                <Link href="/">Blog</Link>
+                <Link href="/blog">Blog</Link>
               </li>
               <li className="text-main-additional-text text-s font-medium hover:text-main-text transition-colors duration-200 ease-in-out">
-                <Link href="/">Terms of Service</Link>
+                <Link href="/terms">Terms of Service</Link>
               </li>
               <li className="text-main-additional-text text-s font-medium hover:text-main-text transition-colors duration-200 ease-in-out">
-                <Link href="/">Privacy Policy</Link>
+                <Link href="/privacy">Privacy Policy</Link>
               </li>
             </ul>
           </div>
