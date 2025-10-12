@@ -5,7 +5,7 @@ import { sendGTMEvent } from "@next/third-parties/google";
 import { RainbowKitProvider, darkTheme } from "@rainbow-me/rainbowkit";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { usePathname, useSearchParams } from "next/navigation";
-import { FC, PropsWithChildren } from "react";
+import { FC, PropsWithChildren, Suspense } from "react";
 import { WagmiProvider, useAccountEffect } from "wagmi";
 
 const ConnectHandler: FC<PropsWithChildren> = ({ children }) => {
@@ -59,13 +59,15 @@ export function Providers({ children }: PropsWithChildren) {
 
   return (
     <WagmiProvider config={wagmiConfig}>
-      <ConnectHandler>
-        <QueryClientProvider client={queryClient}>
-          <RainbowKitProvider theme={darkTheme()}>
-            <MaintenanceMiddleware>{children}</MaintenanceMiddleware>
-          </RainbowKitProvider>
-        </QueryClientProvider>
-      </ConnectHandler>
+      <Suspense fallback={<></>}>
+        <ConnectHandler>
+          <QueryClientProvider client={queryClient}>
+            <RainbowKitProvider theme={darkTheme()}>
+              <MaintenanceMiddleware>{children}</MaintenanceMiddleware>
+            </RainbowKitProvider>
+          </QueryClientProvider>
+        </ConnectHandler>
+      </Suspense>
     </WagmiProvider>
   );
 }
