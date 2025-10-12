@@ -9,7 +9,7 @@ import classNames from "classnames";
 import { Button } from "@/shared/ui/Button";
 
 type PostProps = {
-  recordMap: any;
+  recordMap: unknown;
   post: Post;
   relativePosts: Post[];
 };
@@ -45,7 +45,11 @@ export const PostPage = ({ recordMap, post, relativePosts }: PostProps) => {
 
       <div className="w-full h-[1px] bg-main-stroke" />
       <div className="flex gap-8">
-        <NotionRenderer recordMap={recordMap} fullPage={true} darkMode={true} />
+        <NotionRenderer
+          recordMap={recordMap as never}
+          fullPage={true}
+          darkMode={true}
+        />
         <ul className={"hidden flex-col w-[368px] shrink-0 h-max lg:flex"}>
           {relativePosts.map((item) => (
             <li

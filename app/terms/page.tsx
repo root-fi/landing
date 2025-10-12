@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 export default function Terms() {
   return (
     <div className="mx-auto max-w-[1300px] px-[10px] privacy-content">
